@@ -41,7 +41,6 @@ function App() {
     if (!isHinchaValido || !isClubValido) {
       alert("“Por favor chequea que la información sea correcta”");
     } else {
-      alert(`Bienvenido: ${hincha} al club mas grande ${club}`);
       setBandera(true);
     }
   };
@@ -50,7 +49,7 @@ function App() {
     <>
       <h1>Futbol de primera</h1>
       <div className="container-formulario">
-        <h4>Ingrese su nombre y club favorito</h4>
+        <h2>Ingrese su nombre y club favorito</h2>
 
         <form action="" onSubmit={onSubmitForm}>
           <input
@@ -66,12 +65,17 @@ function App() {
             placeholder="club favorito"
             onChange={onChangeClub}
           />
-          <button type="submit">Enviar</button>
+          <div>
+            <button type="submit">Enviar</button>
+          </div>
         </form>
       </div>
-      <div className="container card">
-        {bandera && <Card hincha={hincha} club={club} />}
-      </div>
+
+      {bandera && (
+        <div className="container-card">
+          <Card hincha={hincha} club={club} />
+        </div>
+      )}
     </>
   );
 }
