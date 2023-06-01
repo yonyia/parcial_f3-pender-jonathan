@@ -1,0 +1,14 @@
+form {
+  display: flex;
+  flex-direction: column;
+  border: solid black;
+}
+
+form input {
+  width: 80%;
+  text-align: center;
+}
+
+form button {
+  width: 20%;
+}
